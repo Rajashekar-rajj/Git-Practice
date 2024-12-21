@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 USERID=$(id -u)
 #root user id will be 0
 echo "user id is $USERID"
@@ -12,23 +12,19 @@ fi
 dnf list installed ngnix
 
 if [ $? -ne 0 ]
-    then 
-        echo "the nginx is not installed, going to install...."
-            dnf install ngnix -y
+then 
+    echo "Git is not installed, going to install it..."
+            dnf install nginx -y
         if [ $? -ne 0 ]
             then
-                echo "Nginx not installed please check"
-        exit 1             
-    fi
+                echo "Git installation is not success...check it"
+        exit 1
+     else
+       echo "Git installation is success"
+    fi             
 
-# USERID=$(id -u)
-# #echo "User ID is: $USERID"
 
-# if [ $USERID -ne 0 ]
-# then
-#     echo "Please run this script with root priveleges"
-#     exit 1
-# fi
+
 
 # dnf list installed git # Just checking whether installed or not
 
