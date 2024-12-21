@@ -14,7 +14,11 @@ dnf list installed ngnix
 if [ $? -ne 0 ]
     then 
         echo "the nginx is not installed, going to install...."
-            dnf install ngnix -y 
+            dnf install ngnix -y
+        if [ $? -ne 0 ]
+            then
+                echo "Nginx not installed please check"
+        exit 1             
     fi
 
 # USERID=$(id -u)
