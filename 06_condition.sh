@@ -5,9 +5,9 @@ read -s NUMBER
 
 echo "entered number is $NUMBER"
 
-if [ $NUMBER -gt 20 ]
-then 
-    echo "$NUMBER is not greater than the 20"
+if [ $NUMBER -gt 20 ] #gt, lt, eq, -ne, -ge, -le
+then
+    echo "Given number: $NUMBER is greater than 20"
 else
-    scho "$NUMBER is greater than 20"
+    echo "Given number: $NUMBER is less than 20"
 fi
