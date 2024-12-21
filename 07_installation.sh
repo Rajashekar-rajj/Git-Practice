@@ -13,16 +13,17 @@ dnf list installed ngnix
 
 if [ $? -ne 0 ]
 then 
-    echo "Git is not installed, going to install it..."
+    echo "nginx is not installed, going to install it..."
             dnf install nginx -y
         if [ $? -ne 0 ]
             then
-                echo "Git installation is not success...check it"
+                echo "nginx installation is not success...check it"
         exit 1
      else
-       echo "Git installation is success"
+       echo "nginx installation is success"
     fi             
-
+else
+    echo "nginx installation is success"   
 fi
 
 
