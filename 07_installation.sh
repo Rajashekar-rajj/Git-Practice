@@ -1,5 +1,5 @@
 #!/bin/bash
-USERID=(id -u)
+USERID=$(id -u)
 #root user id will be 0
 echo "user id is $USERID"
 if [ $USERID -et 0 ]
