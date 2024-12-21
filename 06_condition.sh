@@ -10,3 +10,4 @@ then
     echo "$NUMBER is not greater than the 20"
 else
     scho "$NUMBER is greater than 20"
+fi
