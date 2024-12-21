@@ -8,4 +8,20 @@ if [ $USERID -ne 0 ]
 
        exit 1
 fi
-       
+
+dnf list installed ngnix
+
+if [ $? -ne 0 ]
+    then 
+    echo "the nginx is not installed, going to install...."
+            dnf install ngnix -y 
+else 
+    if [ $? -ne 0 ]
+       echo "ngnix is not installed please check...."
+       exit 1
+    else
+    echo "Git is already installed, nothing to do.."
+fi
+
+
+
