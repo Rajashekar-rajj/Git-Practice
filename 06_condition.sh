@@ -1,12 +1,12 @@
 #!/bin/bash
 echo "enter the number"
 
-read -s $NUM
+read -s $NUMBER
 
-echo "entered number is $NUM"
+echo "entered number is $NUMBER"
 
-if [ $NUM -gt 20 ]
+if [ $NUMBER -gt 20 ]
 then 
-    echo "$NUM is not greater than the 20"
+    echo "$NUMBER is not greater than the 20"
 else
-    scho "$NUM is greater than 20"
+    scho "$NUMBER is greater than 20"
