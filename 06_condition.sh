@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "enter the number"
 
-read -s $NUMBER
+read -s NUMBER
 
 echo "entered number is $NUMBER"
 
