@@ -31,9 +31,7 @@ do
          echo -e "$R $package not installed going to install... $N"
         dnf install $package -y
         VALIDATE $? "$package installed"
-      exit 1
-    else
-        echo -e "$G $package is alredy installed... $N"
+      
     fi
 done 
 
