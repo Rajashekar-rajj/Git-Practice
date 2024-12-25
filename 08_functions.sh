@@ -22,19 +22,11 @@ fi
 
 dnf list installed nginx
 
-VALIDATE $? "nginx Package"
-
-# if [ $? -ne 0 ]
-# then 
-#     echo "nginx is not installed, going to install it..."
-#             dnf install nginx -y
-#         if [ $? -ne 0 ]
-#             then
-#                 echo "nginx installation is not success...check it"
-#         exit 1
-#      else
-#        echo "nginx installation is success"
-#     fi             
-# else
-#    echo "Git is already installed, nothing to do.."   
-# fi
+if [ $? -ne 0 ]
+then 
+    echo "nginx is not installed, going to install it..."
+            dnf install nginx -y
+       VALIDATE $? "nginx installed"
+else
+   echo "Nginx is already installed, nothing to do.."   
+fi
