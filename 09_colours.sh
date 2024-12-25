@@ -32,5 +32,5 @@ then
             dnf install nginx -y
        VALIDATE $? "nginx installed"
 else
-   echo "$G Nginx is already installed, nothing to do.. $N"   
+   echo -e "$G Nginx is already installed, nothing to do.. $N"   
 fi
