@@ -17,35 +17,37 @@ VALIDATE(){
        then
              echo -e "$G $2 success.... $N"
              exit 1
-    else
+     else
         echo -e  "$R $2 not success... $G"    
     fi
 
 }
 
-# for package in $@ # $@ refers to all arguments passed to it
-# do
-#         dnf installed $package
-#     if [$? -ne 0]
-#     than
-#          echo -e "$R $package not installed going to install... $N"
-#         dnf install $package -y
-#         VALIDATE $? "$package installed"
-#     else
-#         echo -e "$G $package is alredy installed... $N"
-#     fi
-# done 
-
 for package in $@ # $@ refers to all arguments passed to it
 do
-    dnf list installed $package
-    if [ $? -ne 0 ]
-    then
-        echo "$package is not installed, going to install it.."
+      dnf installed $package
+    if [$? -ne 0]
+    than
+         echo -e "$R $package not installed going to install... $N"
         dnf install $package -y
-        VALIDATE $? "Installing $package"
+        VALIDATE $? "$package installed"
+      exit 1
     else
-        echo "$package is already installed..nothing to do"
+        echo -e "$G $package is alredy installed... $N"
     fi
-done
+done 
+
+# for package in $@ # $@ refers to all arguments passed to it
+# do
+#     dnf list installed $package
+#     if [ $? -ne 0 ]
+#     then
+#         echo "$package is not installed, going to install it.."
+#         dnf install $package -y
+#         VALIDATE $? "Installing $package"
+#         exit 1
+#     else
+#         echo "$package is already installed..nothing to do"
+#     fi
+# done
 
