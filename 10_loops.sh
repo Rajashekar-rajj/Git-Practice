@@ -33,7 +33,7 @@ do
         VALIDATE $? "Installing $package"
         exit 1
     else
-        echo -e "$G $package is alredy installed... $N"
+        echo -e "$package is alredy installed... $N"
     fi
 done 
 
