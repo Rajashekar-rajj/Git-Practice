@@ -28,10 +28,12 @@ do
       dnf installed $package
     if [$? -ne 0]
     than
-         echo -e "$R $package not installed going to install... $N"
+         echo "$package is not installed, going to install it.."
         dnf install $package -y
-        VALIDATE $? "$package installed"
-      
+        VALIDATE $? "Installing $package"
+        exit 1
+    else
+        echo -e "$G $package is alredy installed... $N"
     fi
 done 
 
