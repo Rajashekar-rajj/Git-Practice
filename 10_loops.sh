@@ -23,21 +23,6 @@ VALIDATE(){
 
 }
 
-# for package in $@ # $@ refers to all arguments passed to it
-# do
-#       dnf installed $package
-#     # if [$? -ne 0]
-#     # than
-#     #      echo "$package is not installed, going to install it.."
-#     #     dnf install $package -y
-#     #     VALIDATE $? "Installing $package"
-#     #     exit 1
-#     # else
-#     #     echo "$package is alredy installed... $N"
-#     # fi
-# done 
-
-# sh 15-loops.sh git mysql postfix nginx
 for package in $@ # $@ refers to all arguments passed to it
 do
     dnf list installed $package
