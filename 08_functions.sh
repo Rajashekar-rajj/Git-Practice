@@ -22,7 +22,7 @@ fi
 
 dnf list installed nginx
 
-VALIDATE $? "installing nginx"
+VALIDATE $? "nginx Package"
 
 # if [ $? -ne 0 ]
 # then 
